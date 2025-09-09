@@ -9,7 +9,8 @@ def compress_csv(csv_path: Path, overwrite: bool = False) -> Path:
     gz_path = csv_path.with_suffix(csv_path.suffix + ".gz")
     if gz_path.exists() and not overwrite:
         return gz_path
-    with open(csv_path, "rb") as f_in, gzip.open(gz_path, "wb", compresslevel=6, mtime=0) as f_out:
+    # Use gzip.open without mtime for compatibility across Python versions
+    with open(csv_path, "rb") as f_in, gzip.open(gz_path, "wb", compresslevel=6) as f_out:
         shutil.copyfileobj(f_in, f_out)
     return gz_path
 
