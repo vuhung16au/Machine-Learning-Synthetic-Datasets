@@ -109,6 +109,27 @@ Compress all CSVs with gzip, producing `.csv.gz` side-by-side:
 python scripts/compress_datasets.py --root datasets
 ```
 
+## Makefile usage
+
+Convenience targets from the repository root:
+
+```bash
+make help           # List available targets
+make create-all     # Generate representative datasets across tasks and sizes
+make compress-all   # Compress all CSV datasets (creates .csv.gz)
+make clean          # Delete all CSV files in datasets/
+make clean-gzip     # Delete all .csv.gz files in datasets/
+```
+
+## Shell scripts usage
+
+You can run the helper shell scripts directly from the root (they auto-detect the venv’s Python):
+
+```bash
+bash scripts/create-all.sh
+bash scripts/compress-all.sh [--overwrite]
+```
+
 ## How to use the datasets
 
 - Load with pandas:
