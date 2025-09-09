@@ -205,3 +205,23 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# Project specific
+Prompt.md
+
+# Include CSV datasets and their gzip versions
+!datasets/**/*.csv
+!datasets/**/*.csv.gz
+
+# Ignore other archives inside datasets
+/datasets/**/*.zip
+/datasets/**/*.tar
+/datasets/**/*.7z
+
+# macOS
+.DS_Store
+
+# Project specific
+Prompt.md
+datasets/
