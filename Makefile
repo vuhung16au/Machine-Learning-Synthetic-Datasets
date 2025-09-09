@@ -1,10 +1,13 @@
-.PHONY: help create-all compress-all clean clean-gzip
+.PHONY: help all create-all compress-all clean clean-gzip
 help:
 	@echo "Available targets:"
+	@echo "  make all         - Alias for make create-all"
 	@echo "  make create-all   - Generate all datasets"
 	@echo "  make compress-all - Compress all datasets (.csv -> .csv.gz)"
 	@echo "  make clean        - Delete all CSV datasets"
 	@echo "  make clean-gzip   - Delete all compressed CSV datasets (.csv.gz)"
+
+all: create-all
 
 
 SHELL := /bin/bash
