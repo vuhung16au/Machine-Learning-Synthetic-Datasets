@@ -44,3 +44,29 @@ Usage:
 ```bash
 python scripts/compress_datasets.py --root datasets [--overwrite]
 ```
+
+## Shell helpers
+
+Convenience shell scripts are available and can be executed from the repo root. They auto-detect Python, preferring `.venv/bin/python`, then `python`, then `python3`.
+
+- Generate representative datasets across tasks and sizes:
+```bash
+bash scripts/create-all.sh
+```
+
+- Compress all CSV datasets (creates `.csv.gz` next to each `.csv`):
+```bash
+bash scripts/compress-all.sh [--overwrite]
+```
+
+## Makefile targets
+
+Instead of calling scripts directly, you can use the Makefile from the repo root:
+
+```bash
+make help
+make create-all
+make compress-all
+make clean
+make clean-gzip
+```
