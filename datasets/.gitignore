@@ -1,0 +1,19 @@
+# Keep CSV datasets
+!*.csv
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.log
+
+# Ignore other archive types, allow gzip
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Allow .gz for this project (we will produce .csv.gz)
+!*.gz
+
+
+*.csv
